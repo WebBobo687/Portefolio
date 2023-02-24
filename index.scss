@@ -1,0 +1,221 @@
+*,::before,::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: roboto, sans-serif;
+    font-size: calc(3vw + 10px);
+}
+
+/* Navigation */
+nav {
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: end;
+    z-index: 10;
+}
+
+nav a {
+    color: #fff;
+    font-size: 0.4em;
+    margin: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+nav a:first-child {
+    margin-right: auto;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+}
+
+nav a:hover::after {
+    background: #d40000e5;
+}
+
+// HOME
+.home {
+    height: 100vh;
+    background: #3c3c3c;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0 50px;
+    position: relative;
+}
+
+.home h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+    padding-top: 200px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    font-weight: 900;
+}
+
+.home h1 span {
+    margin: 0 10px;
+    font-size: 1em;
+    color: #f1f1f1e3;
+    animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0.1vw 0vw 0.2vw #ff7474,
+            0.15vw 0vw 0.2vw #ff7474,
+            0.4vw 0vw 0.2vw #ff7474,
+            
+            0.1vw 0vw 0.25vw #ff3131,
+            0.15vw 0vw 0.25vw #ff3131,
+            0.4vw 0vw 0.25vw #ff3131,
+            
+            0.1vw 0vw 1vw #ff3131,
+            0.15vw 0vw 1vw #ff3131,
+            0.4vw 0vw 1vw #ff3131,
+
+            0.1vw 0vw 0.5vw #fb0404,
+            0.15vw 0vw 0.5vw #fb0404,
+            0.4vw 0vw 2vw #fb0404,
+
+            0.1vw 0vw 5vw #fb0404,
+            0.15vw 0vw 20vw #fb0404,
+            0.4vw 0vw 10vw #fb0404;
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.home .subtitle {
+    font-family: roboto, sans-serif;
+    margin-block: 5%;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    font-weight: 900;
+}
+
+// bouton pour CV
+.cv-btn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: max-content;
+    background: #f1f1f1;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.3em;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.cv-btn:hover {
+    box-shadow: 0 5px 15px rgba(255, 2552, 255, 0.2)
+}
+
+.cv-btn:focus {
+    box-shadow: 0 5px 15px rgba(255, 2552, 255, 0.2)
+}
+
+.cv-btn:active {
+    background: #3c3c3c;
+    color: #fff;
+}
+
+.cv-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+// bouton descendre
+.floating-btn {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 #fff;
+    animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.01);
+    }
+}
+
+.floating-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 650px) {
+    .home {
+        height: 60vh;
+        padding: 0 25px;
+    }
+
+    .home h1 {
+        padding-top: 100px;
+    }
+
+    .subtitle {
+        margin-top: 5px;
+    }
+
+    .stream-link {
+        max-width: 145px;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .stream-link img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .floating-btn img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .home {
+        padding: 0 10px;
+    }
+}  
